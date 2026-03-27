@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab 05 </title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">Emilia Hotel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lab 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lab 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lab 3</a>
+                    </li>
+                    <li class="nav-item Active">
+                        <a class="nav-link" href="#">Lab 4</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Lab 5</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lab 6</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button  id="loginNav" type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#login">
+                        Login
+                    </button>
+                    <button  id="logoutNav" type="button" class="btn btn-danger position-absolute invisible" data-dismiss="modal" data-bs-target="#login">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="login" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-center" id="staticBackdropLabel">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"> <!---modalbody--->
+                    <form id="userForm">
+                        <div class="input-group mb-3"> <!--FIRST NAME-->
+                            <span class="input-group-text" > <i class="bi bi-person"></i> </span> <span id="invalidSign"></span>
+                            <input type="text" class="form-control" id="firstName" placeholder="First name" aria-label="Username"
+                                   aria-describedby="name">
+                        </div>
+                        <div class="input-group mb-3"> <!--LAST NAME-->
+                            <span class="input-group-text" > <i class="bi bi-person"></i> </span>
+                            <input type="text" class="form-control" id="lastName" placeholder="Last name" aria-label="lastName"
+                                   aria-describedby="lastName">
+                        </div>
+                        <div class="input-group mb-3"> <!--email-->
+                            <span class="input-group-text"> <i class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control" placeholder="Email" id="emailUser" aria-label="email"
+                                   aria-describedby="email">
+                        </div>
+                        <div class="input-group mb-3"> <!--age-->
+                            <span class="input-group-text"> <i class="bi bi-123"></i> </span>
+                            <input type="number" class="form-control" id="age" placeholder="Age" aria-label="age"
+                                   aria-describedby="age">
+                        </div>
+                        <div class="input-group mb-3"> <!--postal code-->
+                            <span class="input-group-text"> <i class="bi bi-mailbox"></i> </span>
+                            <input type="text" class="form-control" id="postalCode" placeholder="Postal Code" aria-label="postalCode"
+                                   aria-describedby="postalCode">
+                        </div>
+                        <div class="input-group mb-3"> <!--phone number-->
+                            <span class="input-group-text"> <i class="bi bi-telephone-fill"></i> </span>
+                            <input type="tel" class="form-control" id="phoneNum" placeholder="Phone Number" aria-label="phoneNum"
+                                   aria-describedby="phoneNum" >
+                        </div></form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="userBtn">Login</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> <!---MODAL-->
+
+    <!--GREETING MESSAGE--->
+    <div class="d-flex justify-content-center align-items-center p-2"> <!-----greeting message-->
+        <h5 id="greetingMessage"></h5>
+    </div>
+
+    <!--card user---->
+    <div class="d-flex justify-content-center align-items-center p-2" id="cardUser">
+    </div>
+
+
+
+
+
+
+
+
+    <!--footer-->
+    <footer class="bg-body-tertiary d-flex align-items-center justify-content-center ">
+        <p class="m-3">COPYRIGHT 2025 </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="js/lab05.js"></script>
+</body>
+</html>
